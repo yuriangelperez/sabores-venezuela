@@ -1,15 +1,31 @@
 # Sabores de Venezuela
 
-Galería de recetas venezolanas, con formulario para compartir tu receta.
-HTML, CSS, JavaScript, React (React Router) y Node/Express.
+Integrante: Yuriangel Perez 
 
-- `server.js` API Express: `GET /api/recetas` y `POST /api/compartir`
-- `recetas.json` recetas del carrusel
-- `src/` React: `App.js`, `Header.js`, `Recetas.js` (galería), `Receta.js` (detalle), `CompartirReceta.js` (formulario)
-- `public/` páginas HTML/CSS de la clase
+Proyecto realizado para la **EFA de Desarrollo Web** de la UNPilar.
 
-## Uso
-- `npm install`
-- `npm run dev` → http://localhost:5173
-- `npm run build && npm start` → http://localhost:3000
-# sabores-venezuela
+Es una galería de recetas venezolanas con una página de detalle para cada receta y un formulario para compartir recetas nuevas.
+
+## Tecnologías
+- HTML, CSS y JavaScript
+- React (con React Router)
+- Node.js y Express
+- Vite
+
+## Estructura
+- `server.js` — servidor Express: `GET /api/recetas` y `POST /api/compartir`
+- `recetas.json` — datos de las recetas
+- `src/` — aplicación React
+  - `App.js` — rutas y estructura general
+  - `Header.js` — cabecera y navegación
+  - `Recetas.js` — galería de recetas
+  - `Receta.js` — detalle de una receta
+  - `CompartirReceta.js` — formulario para compartir una receta
+  - `App.css` e `index.css` — estilos
+
+Las recetas que se envían por el formulario se guardan en `compartidas.json`.
+
+## Cómo ejecutarlo
+1. Instalar dependencias: `npm install`
+2. Modo desarrollo: `npm run dev` y abrir http://localhost:5173 (arranca la web y el servidor a la vez)
+3. Modo producción: `npm run build` y luego `npm start`, abrir http://localhost:3000
