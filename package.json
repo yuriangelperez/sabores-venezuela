@@ -1,25 +1,40 @@
 {
-  "name": "recetas-venezolanas",
+  "name": "sabores-venezuela",
+  "version": "1.0.1",
   "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "concurrently -k -n api,web \"npm:dev:server\" \"npm:dev:client\"",
-    "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0",
-    "start": "node server.js",
-    "dev:server": "node --watch server.js",
-    "dev:client": "vite"
-  },
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "express": "^4.21.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.30.6"
+    "react-router-dom": "^6.30.6",
+    "react-scripts": "5.0.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "concurrently": "^10.0.6",
-    "vite": "^5.4.11"
+    "concurrently": "^10.0.6"
+  },
+  "scripts": {
+    "start": "concurrently -k -n api,web \"npm:server\" \"react-scripts start\"",
+    "server": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -1,0 +1,681 @@
+/* Estilos generales y reset */
+/* =========================================================
+   SABOR VENEZOLANO - ESTILOS DIVERTIDOS Y GENIALES
+   Inspirado en la bandera tricolor (Amarillo, Azul y Rojo)
+   Equilibrado: Amarillo únicamente presente en la bandera tricolor.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap");
+
+:root {
+  /* Colores oficiales de la Bandera de Venezuela */
+  --vzla-amarillo: #fcd116;
+  --vzla-azul: #003893;
+  --vzla-rojo: #ce1126;
+  --bandera-gradiente: linear-gradient(
+    90deg,
+    #fcd116 0%,
+    #fcd116 33.33%,
+    #003893 33.33%,
+    #003893 66.66%,
+    #ce1126 66.66%,
+    #ce1126 100%
+  );
+
+  /* Colores principales del sitio (Dominan el azul y el rojo, sin saturar de amarillo) */
+  --color-primario: #0a2558;
+  --color-azul-real: #003893;
+  --color-rojo-acento: #ce1126;
+  --color-rojo-hover: #b00d1e;
+  --color-fondo: #f4f7fb;
+  --color-tarjeta: #ffffff;
+  --color-texto: #2c3e50;
+  --color-texto-muted: #64748b;
+  --color-azul-suave: #edf4ff;
+  --color-rojo-suave: #fdf0f1;
+  --color-borde: #e2e8f0;
+
+  /* Sombras y transiciones */
+  --sombra-suave:
+    0 10px 25px -5px rgba(10, 37, 88, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --sombra-hover:
+    0 20px 35px -8px rgba(10, 37, 88, 0.16),
+    0 10px 16px -5px rgba(206, 17, 38, 0.08);
+  --radio-tarjeta: 20px;
+  --radio-boton: 50px;
+  --transicion: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Detalle superior de la Bandera Tricolor fija en la ventana */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--bandera-gradiente);
+  z-index: 1000;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.7;
+  background-color: var(--color-fondo);
+  background-image:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(0, 56, 147, 0.04) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(206, 17, 38, 0.04) 0%,
+      transparent 40%
+    );
+  color: var(--color-texto);
+  padding: 25px 20px 40px;
+  min-height: 100vh;
+}
+
+/* Header genial con estilo playero/moderno y tricolor */
+header {
+  background: #1b2a4a;
+  background: linear-gradient(135deg, #0a2558 0%, #003893 100%);
+  color: white;
+  padding: 15px 20px;
+  padding: 24px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-radius: var(--radio-tarjeta);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Franja tricolor al pie del header */
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--bandera-gradiente);
+}
+
+header h1 {
+  font-family: "Fredoka", cursive, sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+header h1:hover {
+  transform: scale(1.02);
+}
+
+/* Navegación con píldoras interactivas y animadas */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 8px 22px;
+  border-radius: var(--radio-boton);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  transition: var(--transicion);
+  display: inline-block;
+}
+
+nav a:hover {
+  color: #f59e0b;
+  background: var(--color-rojo-acento);
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(206, 17, 38, 0.4);
+  border-color: transparent;
+}
+
+/* Contenedor principal */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Títulos principales dentro de main (index y galería) */
+main > h1 {
+  font-family: "Fredoka", cursive, sans-serif;
+  font-size: 2.2rem;
+  color: var(--color-primario);
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+main > h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--bandera-gradiente);
+}
+
+main > p {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--color-texto-muted);
+  margin-bottom: 25px;
+}
+
+/* =========================================================
+   ARTÍCULO / FICHA DE RECETA (Divertida y Dinámica)
+   ========================================================= */
+article {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: var(--color-tarjeta);
+  padding: 35px 40px;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-suave);
+  border: 1px solid var(--color-borde);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transicion);
+}
+
+/* Cinta decorativa tricolor en el borde superior del artículo */
+article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--bandera-gradiente);
+}
+
+/* Título de la receta */
+article h2 {
+  font-family: "Fredoka", cursive, sans-serif;
+  font-size: 2.4rem;
+  color: var(--color-primario);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Imagen de la receta con efecto divertido */
+article img {
+  width: 100%;
+  max-height: 350px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 15px 0;
+  border-radius: 16px;
+  margin: 15px 0 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 3px solid #ffffff;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+ul,
+ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  article img:hover {
+    transform: scale(1.015);
+  }
+
+  /* Estilos para la galería con Flexbox */
+  /* Subtítulos principales (Ingredientes, Preparación) */
+  article h3 {
+    font-family: "Fredoka", cursive, sans-serif;
+    font-size: 1.6rem;
+    color: var(--color-primario);
+    margin: 30px 0 16px;
+    padding: 6px 16px;
+    border-left: 5px solid var(--color-rojo-acento);
+    background: linear-gradient(
+      90deg,
+      var(--color-rojo-suave) 0%,
+      transparent 100%
+    );
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Subtítulos de sección secundaria (Para las arepas, etc.) */
+  article h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-azul-real);
+    margin: 18px 0 12px;
+    display: inline-block;
+    background: var(--color-azul-suave);
+    padding: 4px 16px;
+    border-radius: var(--radio-boton);
+    border-left: 3px solid var(--color-azul-real);
+  }
+
+  /* Lista de ingredientes con tarjetas interactivas */
+  ul {
+    list-style: none;
+    margin: 0 0 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+  }
+
+  ul li {
+    background: #f8fafc;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid #e9edf4;
+    border-left: 4px solid var(--color-azul-real);
+    font-weight: 600;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    transition: var(--transicion);
+  }
+
+  ul li::before {
+    content: "🫓";
+    margin-right: 10px;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  ul li:hover {
+    background: var(--color-azul-suave);
+    border-left-color: var(--color-rojo-acento);
+    transform: translateX(6px);
+    box-shadow: 0 4px 12px rgba(0, 56, 147, 0.08);
+  }
+
+  ul li:hover::before {
+    transform: rotate(15deg) scale(1.2);
+  }
+
+  /* Lista numerada de pasos con insignias circulares */
+  ol {
+    list-style: none;
+    counter-reset: paso-contador;
+    margin: 0 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  ol li {
+    counter-increment: paso-contador;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 20px 16px 62px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+    font-size: 1.02rem;
+    color: #334155;
+    transition: var(--transicion);
+  }
+
+  ol li::before {
+    content: counter(paso-contador);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(
+      135deg,
+      var(--color-azul-real),
+      var(--color-primario)
+    );
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 8px rgba(0, 56, 147, 0.35);
+    transition: transform 0.3s ease;
+  }
+
+  ol li strong {
+    color: var(--color-azul-real);
+    font-weight: 700;
+  }
+
+  ol li:hover {
+    border-color: var(--color-azul-real);
+    background: #fbfdff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 56, 147, 0.08);
+  }
+
+  ol li:hover::before {
+    background: linear-gradient(
+      135deg,
+      var(--color-rojo-acento),
+      var(--color-rojo-hover)
+    );
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 4px 10px rgba(206, 17, 38, 0.4);
+  }
+
+  /* Badge divertido para el tiempo de preparación */
+  article > p:last-of-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-azul-suave);
+    border: 2px dashed #b9d5fd;
+    padding: 12px 24px;
+    border-radius: var(--radio-boton);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0, 56, 147, 0.06);
+    transition: var(--transicion);
+  }
+
+  article > p:last-of-type::before {
+    content: "⏱️";
+    font-size: 1.3rem;
+  }
+
+  article > p:last-of-type strong {
+    color: var(--color-rojo-acento);
+    font-size: 1.1rem;
+  }
+
+  article > p:last-of-type:hover {
+    transform: scale(1.04);
+    background: #e3eeff;
+    border-color: var(--color-azul-real);
+  }
+
+  /* =========================================================
+   GALERÍA DE AREPAS (Cards modernas y lúdicas)
+   ========================================================= */
+  .galeria {
+    display: flex; /* Pone las tarjetas en fila */
+    flex-wrap: wrap; /* Si no entran, bajan a otra fila */
+    gap: 20px; /* Espacio entre tarjetas */
+    justify-content: center; /* Centrar las tarjetas */
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  .tarjeta {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: var(--color-tarjeta);
+    border-radius: var(--radio-tarjeta);
+    padding: 0;
+    width: 275px;
+    box-shadow: var(--sombra-suave);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--color-borde);
+    transition: var(--transicion);
+  }
+
+  /* Línea tricolor en la parte superior de cada tarjeta */
+  .tarjeta::before {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+    background: var(--bandera-gradiente);
+  }
+
+  .tarjeta:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--sombra-hover);
+    border-color: rgba(0, 56, 147, 0.25);
+  }
+
+  .tarjeta img {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: 180px;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-bottom: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .tarjeta:hover img {
+    transform: scale(1.06);
+  }
+
+  .tarjeta h3 {
+    font-family: "Fredoka", cursive, sans-serif;
+    font-size: 1.35rem;
+    color: var(--color-primario);
+    margin: 15px 18px 8px;
+  }
+
+  .tarjeta p {
+    color: var(--color-texto-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 18px 15px;
+    flex-grow: 1;
+  }
+
+  /* Botón 'Ver más' estilo píldora llamativa */
+  .tarjeta a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0d9488;
+    display: block;
+    margin: 0 18px 18px;
+    padding: 10px 16px;
+    background: linear-gradient(
+      135deg,
+      var(--color-azul-real),
+      var(--color-primario)
+    );
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radio-boton);
+    box-shadow: 0 4px 12px rgba(0, 56, 147, 0.25);
+    transition: var(--transicion);
+  }
+
+  .tarjeta a:hover {
+    background: linear-gradient(
+      135deg,
+      var(--color-rojo-acento),
+      var(--color-rojo-hover)
+    );
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(206, 17, 38, 0.35);
+  }
+
+  /* =========================================================
+   FOOTER Y BOTÓN VOLVER
+   ========================================================= */
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    color: #666;
+    margin-top: 40px;
+    padding: 20px 15px;
+    color: var(--color-texto-muted);
+    font-weight: 600;
+  }
+
+  /* RESPONSIVE: en celulares, tarjeta ocupa todo el ancho */
+  footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    background: linear-gradient(
+      135deg,
+      var(--color-primario),
+      var(--color-azul-real)
+    );
+    text-decoration: none;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 10px 28px;
+    border-radius: var(--radio-boton);
+    box-shadow: 0 4px 14px rgba(10, 37, 88, 0.2);
+    transition: var(--transicion);
+  }
+
+  footer a::before {
+    content: "←";
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+  }
+
+  footer a:hover {
+    background: linear-gradient(
+      135deg,
+      var(--color-rojo-acento),
+      var(--color-rojo-hover)
+    );
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 18px rgba(206, 17, 38, 0.35);
+  }
+
+  footer a:hover::before {
+    transform: translateX(-4px);
+  }
+
+  /* =========================================================
+   DISEÑO RESPONSIVO (Móviles y Tablets)
+   ========================================================= */
+  @media (max-width: 768px) {
+    .tarjeta {
+      width: 100%;
+    }
+    .galeria {
+      padding: 10px;
+    }
+    body {
+      padding: 15px 12px 30px;
+    }
+
+    header {
+      padding: 20px 15px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      gap: 8px;
+    }
+
+    nav a {
+      display: block;
+      margin: 8px 0;
+      padding: 6px 16px;
+      font-size: 0.95rem;
+    }
+
+    article {
+      padding: 24px 18px;
+    }
+
+    article h2 {
+      font-size: 1.8rem;
+    }
+
+    ul {
+      grid-template-columns: 1fr;
+    }
+
+    ol li {
+      padding-left: 52px;
+      font-size: 0.95rem;
+    }
+
+    ol li::before {
+      left: 12px;
+      width: 28px;
+      height: 28px;
+      font-size: 0.85rem;
+    }
+
+    .tarjeta {
+      width: 100%;
+      max-width: 340px;
+    }
+  }
+}

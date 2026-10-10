@@ -1,13 +1,14 @@
-import express from 'express';
-import fs from 'fs';
+const express = require('express');
+const fs = require('fs');
 
 const app = express();
+
 // Se lee en cada petición para que los cambios en recetas.json se vean sin reiniciar
 const leerRecetas = () => JSON.parse(fs.readFileSync('recetas.json', 'utf8'));
 
 app.use(express.json());
 
-// Recetas del carrusel
+// Recetas de la galería
 app.get('/api/recetas', (_req, res) => res.json(leerRecetas()));
 
 // Recetas que comparte la gente (se guardan en compartidas.json)
@@ -27,9 +28,9 @@ app.post('/api/compartir', (req, res) => {
   res.status(201).json({ ok: true });
 });
 
-// Sirve el build de React; cualquier otra ruta (ej. /compartir) devuelve index.html
-app.use(express.static('dist'));
-app.get('*', (_req, res) => res.sendFile('index.html', { root: 'dist' }));
+// Sirve el build de React (npm run build); cualquier otra ruta devuelve index.html
+app.use(express.static('build'));
+app.get('*', (_req, res) => res.sendFile('index.html', { root: 'build' }));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor en http://localhost:${PORT}`));
