@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "nombre": "Arepa de carne mechada",
+    "descripcion": "La arepa más sabrosa y reconfortante de la mesa venezolana, rellena con carne desmechada y queso.",
+    "categoria": "Plato principal",
+    "imagen": "https://laroussecocina.mx/wp-content/uploads/2020/07/Arepas-de-carne-mechada.jpg",
+    "ingredientes": [
+      "2 tazas de harina de maíz precocida",
+      "2 1/4 tazas de agua tibia",
+      "1 cucharadita de sal",
+      "500 g de falda de res",
+      "1 cebolla picada",
+      "1 pimiento rojo picado",
+      "2 dientes de ajo",
+      "1 tomate maduro",
+      "1 cucharadita de comino",
+      "1 cucharadita de salsa de soja",
+      "Aceite, sal y pimienta al gusto"
+    ],
+    "instrucciones": [
+      "Prepara la masa de arepa mezclando la harina de maíz, el agua tibia y la sal hasta formar una masa suave y uniforme.",
+      "Forma discos redondos, aplástalos ligeramente y cocínalos en una sartén o plancha a fuego medio durante 7 a 10 minutos por lado.",
+      "Cocina la carne en agua hasta que esté tierna, desméchala y reserva.",
+      "Sofríe la cebolla, el pimiento, el ajo y el tomate en aceite. Añade la carne, el comino, la salsa de soja y un poco del caldo para dejarla jugosa.",
+      "Rellena las arepas con la carne mechada y sirve caliente con queso o mantequilla al gusto."
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Pabellón criollo",
+    "descripcion": "El plato más representativo de Venezuela: arroz, carne mechada, caraotas negras y plátano.",
+    "categoria": "Clásico",
+    "imagen": "https://comidasvenezolanas.net/wp-content/uploads/2019/04/Pabellon-criollo-1.jpg",
+    "ingredientes": [
+      "500 g de carne de res",
+      "2 tazas de arroz",
+      "1 taza de caraotas negras cocidas",
+      "2 plátanos maduros",
+      "1 cebolla picada",
+      "2 dientes de ajo",
+      "1 tomate",
+      "1 cucharadita de comino",
+      "1 cucharadita de pimentón",
+      "Aceite, sal y pimienta al gusto"
+    ],
+    "instrucciones": [
+      "Cocina la carne con sal hasta quedar tierna y luego desméchala.",
+      "Sofríe la cebolla, el ajo y el tomate, agrega la carne, el comino y el pimentón hasta obtener una salsa sabrosa.",
+      "Prepara el arroz y cocina las caraotas con un sofrito suave.",
+      "Frita los plátanos en rodajas o en tajadas.",
+      "Sirve la carne mechada sobre el arroz con caraotas y plátano frito."
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Hallaca",
+    "descripcion": "La hallaca es un símbolo navideño y festivo, con sabor intenso y relleno tradicional.",
+    "categoria": "Especial",
+    "imagen": "https://cdn0.recetasgratis.net/es/posts/1/8/8/hallacas_venezolanas_65881_orig.jpg",
+    "ingredientes": [
+      "Harina de maíz precocida",
+      "1 pollo o carne de cerdo",
+      "1 cebolla grande",
+      "1 pimentón rojo",
+      "1 ají dulce",
+      "2 dientes de ajo",
+      "1 taza de caldo",
+      "Aceitunas y alcaparras",
+      "Sal, pimienta, comino y achiote",
+      "Hojas de plátano para envolver"
+    ],
+    "instrucciones": [
+      "Prepara el relleno con la carne, la cebolla, el ají, el ajo y el caldo hasta que esté bien sazonado.",
+      "Mezcla la harina con agua y achiote para obtener la masa.",
+      "Extiende la masa sobre la hoja de plátano, coloca el relleno, aceitunas y alcaparras, y dobla cuidadosamente.",
+      "Cierra la hallaca con la hoja de plátano y haz el nudo final.",
+      "Hierve las hallacas durante unos 45 minutos y sirve calientes."
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Tres leches",
+    "descripcion": "Un postre suave, esponjoso y lleno de crema que encanta a grandes y pequeños.",
+    "categoria": "Postre",
+    "imagen": "https://cdn0.recetasgratis.net/es/posts/0/1/9/torta_tres_leches_8910_1200.jpg",
+    "ingredientes": [
+      "1 taza de harina de trigo",
+      "1 taza de azúcar",
+      "3 huevos",
+      "1 cucharadita de polvo de hornear",
+      "1 taza de leche condensada",
+      "1 taza de leche evaporada",
+      "1 taza de crema de leche",
+      "1 cucharadita de esencia de vainilla",
+      "Coco o canela para decorar"
+    ],
+    "instrucciones": [
+      "Bate los huevos con el azúcar hasta crear una mezcla cremosa y esponjosa.",
+      "Añade la harina con el polvo de hornear y la vainilla, y hornea en un molde hasta dorar.",
+      "Mezcla la leche condensada, la evaporada y la crema de leche para formar la salsa.",
+      "Vierte la mezcla sobre el bizcochuelo y deja reposar en el refrigerador durante varias horas.",
+      "Decora con coco rallado o canela antes de servir."
+    ]
+  }
+]

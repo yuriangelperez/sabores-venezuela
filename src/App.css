@@ -1,0 +1,516 @@
+/* =========================================================
+   SABORES DE VENEZUELA — inspirado en la bandera tricolor
+   ========================================================= */
+
+:root {
+  --vzla-amarillo: #fcd116;
+  --vzla-azul: #003893;
+  --vzla-rojo: #ce1126;
+  --bandera-gradiente: linear-gradient(
+    90deg,
+    #fcd116 0%,
+    #fcd116 33.33%,
+    #003893 33.33%,
+    #003893 66.66%,
+    #ce1126 66.66%,
+    #ce1126 100%
+  );
+
+  --color-primario: #0a2558;
+  --color-azul-real: #003893;
+  --color-rojo-acento: #ce1126;
+  --color-rojo-hover: #b00d1e;
+  --color-fondo: #f4f7fb;
+  --color-tarjeta: #ffffff;
+  --color-texto: #2c3e50;
+  --color-texto-muted: #64748b;
+  --color-azul-suave: #edf4ff;
+  --color-rojo-suave: #fdf0f1;
+  --color-borde: #e2e8f0;
+
+  --sombra-suave: 0 10px 25px -5px rgba(10, 37, 88, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --sombra-hover: 0 20px 35px -8px rgba(10, 37, 88, 0.16), 0 10px 16px -5px rgba(206, 17, 38, 0.08);
+  --radio-tarjeta: 20px;
+  --radio-boton: 50px;
+  --transicion: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Franja tricolor fija arriba */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--bandera-gradiente);
+  z-index: 1000;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.7;
+  background-color: var(--color-fondo);
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(0, 56, 147, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(206, 17, 38, 0.04) 0%, transparent 40%);
+  color: var(--color-texto);
+  padding: 25px 40px 40px;
+  min-height: 100vh;
+}
+
+.App {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #0a2558 0%, #003893 100%);
+  color: white;
+  padding: 24px 20px;
+  text-align: center;
+  border-radius: var(--radio-tarjeta);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--bandera-gradiente);
+}
+
+.header h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 12px;
+}
+
+.navegacion {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.navegacion a {
+  color: white;
+  text-decoration: none;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 8px 22px;
+  border-radius: var(--radio-boton);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transicion);
+}
+
+.navegacion a:hover,
+.navegacion a.active {
+  background: var(--vzla-rojo);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(206, 17, 38, 0.4);
+  border-color: transparent;
+}
+
+/* Títulos de página */
+.titulo-pagina {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2.2rem;
+  color: var(--color-primario);
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.titulo-pagina::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--bandera-gradiente);
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--color-texto-muted);
+  margin-bottom: 25px;
+}
+
+/* Galería de tarjetas */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.tarjeta {
+  background: var(--color-tarjeta);
+  border-radius: var(--radio-tarjeta);
+  width: 275px;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  transition: var(--transicion);
+}
+
+.tarjeta::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background: var(--bandera-gradiente);
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--sombra-hover);
+  border-color: rgba(0, 56, 147, 0.25);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tarjeta:hover img {
+  transform: scale(1.06);
+}
+
+.tarjeta h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.35rem;
+  color: var(--color-primario);
+  margin: 15px 18px 8px;
+}
+
+.tarjeta p {
+  color: var(--color-texto-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 18px 15px;
+  flex-grow: 1;
+}
+
+.tarjeta a {
+  display: block;
+  margin: 0 18px 18px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--color-azul-real), var(--color-primario));
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  border-radius: var(--radio-boton);
+  box-shadow: 0 4px 12px rgba(0, 56, 147, 0.25);
+  transition: var(--transicion);
+}
+
+.tarjeta a:hover {
+  background: linear-gradient(135deg, var(--color-rojo-acento), var(--color-rojo-hover));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(206, 17, 38, 0.35);
+}
+
+/* Ficha de receta */
+.ficha {
+  background: var(--color-tarjeta);
+  padding: 35px 40px;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-suave);
+  border: 1px solid var(--color-borde);
+  position: relative;
+  overflow: hidden;
+}
+
+.ficha::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--bandera-gradiente);
+}
+
+.ficha h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2.4rem;
+  color: var(--color-primario);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.ficha img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 15px 0 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 3px solid #fff;
+}
+
+.ficha h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.6rem;
+  color: var(--color-primario);
+  margin: 30px 0 16px;
+  padding: 6px 16px;
+  border-left: 5px solid var(--color-rojo-acento);
+  background: linear-gradient(90deg, var(--color-rojo-suave) 0%, transparent 100%);
+  border-radius: 0 12px 12px 0;
+}
+
+.ficha ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ficha ul li {
+  background: #f8fafc;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid #e9edf4;
+  border-left: 4px solid var(--color-azul-real);
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  transition: var(--transicion);
+}
+
+.ficha ul li::before {
+  content: "🍽️";
+  margin-right: 10px;
+}
+
+.ficha ul li:hover {
+  background: var(--color-azul-suave);
+  border-left-color: var(--color-rojo-acento);
+  transform: translateX(6px);
+  box-shadow: 0 4px 12px rgba(0, 56, 147, 0.08);
+}
+
+.ficha ol {
+  list-style: none;
+  counter-reset: paso;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ficha ol li {
+  counter-increment: paso;
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  padding: 16px 20px 16px 62px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  color: #334155;
+  transition: var(--transicion);
+}
+
+.ficha ol li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--color-azul-real), var(--color-primario));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(0, 56, 147, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.ficha ol li:hover {
+  border-color: var(--color-azul-real);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 56, 147, 0.08);
+}
+
+.ficha ol li:hover::before {
+  background: linear-gradient(135deg, var(--color-rojo-acento), var(--color-rojo-hover));
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Formulario */
+.formulario-seccion {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.formulario-recetas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario-recetas label {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  color: var(--color-primario);
+  margin-top: 8px;
+}
+
+.formulario-recetas input[type="text"],
+.formulario-recetas input[type="email"],
+.formulario-recetas textarea {
+  font: inherit;
+  padding: 10px 14px;
+  border: 2px solid var(--color-borde);
+  border-radius: 12px;
+}
+
+.formulario-recetas input:focus,
+.formulario-recetas textarea:focus {
+  outline: none;
+  border-color: var(--color-azul-real);
+}
+
+.casilla-receta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.formulario-recetas button {
+  margin-top: 16px;
+  padding: 12px 20px;
+  border: none;
+  color: white;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--radio-boton);
+  background: linear-gradient(135deg, var(--color-rojo-acento), var(--color-rojo-hover));
+  box-shadow: 0 4px 12px rgba(206, 17, 38, 0.3);
+  transition: var(--transicion);
+}
+
+.formulario-recetas button:hover {
+  transform: translateY(-2px);
+}
+
+.mensaje-exito,
+.mensaje-error {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.mensaje-exito {
+  background: #e3f6e8;
+  color: #1d6b34;
+}
+
+.mensaje-error {
+  background: var(--color-rojo-suave);
+  color: var(--color-rojo-acento);
+}
+
+/* Botón volver y footer */
+.volver {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.volver a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: var(--radio-boton);
+  background: linear-gradient(135deg, var(--color-primario), var(--color-azul-real));
+  box-shadow: 0 4px 14px rgba(10, 37, 88, 0.2);
+  transition: var(--transicion);
+}
+
+.volver a::before {
+  content: "←";
+}
+
+.volver a:hover {
+  background: linear-gradient(135deg, var(--color-rojo-acento), var(--color-rojo-hover));
+  transform: translateY(-2px) scale(1.05);
+}
+
+.App-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 15px;
+  color: var(--color-texto-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px 12px 30px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .tarjeta {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .ficha {
+    padding: 24px 18px;
+  }
+
+  .ficha h2 {
+    font-size: 1.8rem;
+  }
+
+  .ficha ul {
+    grid-template-columns: 1fr;
+  }
+
+  .ficha ol li {
+    padding-left: 52px;
+  }
+}
